@@ -2,8 +2,14 @@
 {
     public class Category
     {
-        public int Id { get; set; }
+        public Category(string name, Category parentCategory)
+        {
+            Name = name;
+            ParentCategory = parentCategory;
+        }
 
         public string Name { get; set; }
+
+        public Category ParentCategory { get; set; }
     }
 }

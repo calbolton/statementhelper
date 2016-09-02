@@ -20,6 +20,11 @@ namespace StatementHelper.Helpers
 
         public ICollection<StatementItem> LoadStatementItems()
         {
+            if (!_fileInfo.Exists)
+            {
+                return new List<StatementItem>();
+            }
+
             using (var reader = _fileInfo.OpenRead())
             {
                 var streamReader = new StreamReader(reader);
